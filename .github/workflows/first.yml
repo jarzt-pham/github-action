@@ -9,4 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: First Job
-        run: exit 1
+        run: echo 'testing the first job'
+
+        # For testing failed
+        # run: exit 1
