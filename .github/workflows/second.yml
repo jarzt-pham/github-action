@@ -1,15 +1,14 @@
 name: Second Workflow
 
 on:
-  workflow_run:
-    workflows: ["First Workflow"]
-    types:
-      - completed
+  push:
+    branches:
+      - main
 
 jobs:
   run-if-success:
     # Check the result of the previous action pipeline
-    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    # if: ${{ github.event.workflow_run.conclusion == 'success' }}
     runs-on: ubuntu-latest
     steps:
       - name: Second Job
